@@ -27,8 +27,13 @@ public class EmployeeController {
 	// Get list of All Employees
 	@GetMapping("/employees")
 	public List<Employee> getAllEmployees()	{
-		
-		return this.employeeRepository.findAll();
+		List<Employee> listOfEmployees = this.employeeRepository.findAll();
+		if(listOfEmployees.isEmpty())
+		{
+			throw new ResourceNotFoundException("There are no records yet to display.");
+		} else {
+			return listOfEmployees;
+		}
 	}
 	
 	// Get employee by ID
