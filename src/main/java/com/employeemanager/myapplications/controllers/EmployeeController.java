@@ -18,7 +18,7 @@ import com.employeemanager.myapplications.model.Employee;
 import com.employeemanager.myapplications.repository.EmployeeRepository;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {"http://localhost:3000", "https://my-employee-manager-react.herokuapp.com"})
 @RestController
 @RequestMapping(value = "/api/")
 public class EmployeeController {
